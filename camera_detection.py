@@ -6,15 +6,15 @@ color = (255, 0, 0)
 thickness = 2
 
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1980)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()  # ret = 1 if the video is captured; frame is the image
 
     # Our operations on the frame come here
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    #blur = cv2.GaussianBlur(gray,(21,21),0)
+    # blur = cv2.GaussianBlur(gray,(21,21),0)
     ret, thresh = cv2.threshold(gray, 10, 20, cv2.THRESH_BINARY_INV)
     img1, contours, hierarchy = cv2.findContours(
         thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
