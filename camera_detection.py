@@ -6,8 +6,8 @@ color = (255, 0, 0)
 thickness = 2
 
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1980)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()  # ret = 1 if the video is captured; frame is the image
@@ -26,7 +26,8 @@ while(True):
         img2 = cv2.drawContours(
             frame, contours, -1, color, thickness)  # draw all contours
         # draw red bounding box in img
-        img3 = cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 0, 255), 2)
+        img3 = cv2.rectangle(img2, (x, y), (x+w, y+h), (0, 0, 255), 2)
+
     # Display the resulting image
     cv2.imshow('Contour', img3)
     if cv2.waitKey(1) & 0xFF == ord('q'):  # press q to quit
