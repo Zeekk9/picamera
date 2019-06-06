@@ -1,3 +1,13 @@
+'''
+Here's a widget to select static ROIs from a video frame. 
+Essentially the idea is to use cv2.setMouseCallback() and event handlers to detect if the mouse has been clicked or released. 
+For this implementation, you can extract coordinates by holding down the left mouse button and dragging to select the desired ROI. 
+You can reset the ROI using the right mouse button. 
+To use the widget, press c to pause the video and start cropping. Then you are free to select the ROI. 
+Once you have selected your ROI, press c again to crop the desired section. 
+To resume the video, press r.
+'''
+
 import cv2
 
 class staticROI(object):
